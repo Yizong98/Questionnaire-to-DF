@@ -9,3 +9,4 @@ This project is about saving survey answers to a table data form.
 3. Open your Command Line, type "pip install numpy"
 4. On Command Line, use cd Documents/Github/Questionnaire-to-DF to go to the project directory.
 5. type "python main.py" and follow the instruction to load your answers.
+6. When asked whether to append to existent file, just say yes and type "questions", the answers will end up being collected  in the questions.csv along with other previous ones.
