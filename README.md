@@ -4,7 +4,7 @@ _______________________
 This project is about saving survey answers to a table data form.
 
 ## Instructions
-1. Make sure you have downloaded Python 3.7 on your computer.
+1. Make sure you have downloaded Github Desktop, Python 3.7 on your computer.
 2. Open your Command Line, type "pip install pandas"
 3. Open your Command Line, type "pip install numpy"
 4. On Command Line, use cd Documents/Github/Questionnaire-to-DF to go to the project directory.
