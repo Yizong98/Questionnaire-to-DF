@@ -21,20 +21,21 @@ def questions_toframe(results_list):
     for res in results_list:
         question_frame = pd.concat([question_frame,pd.DataFrame([res],columns=list(range(1,11)))],axis=0)
     return question_frame
-def export_tocsv(question_frame):
-    return question_frame.to_csv("questions.csv",index=False)
+def export_tocsv(question_frame,name):
+	return question_frame.to_csv("%s.csv"%name,index=False)
 def create_answers():
-    results = []
-    tracker = 0
-    while (True):
-        tracker += 1
-        val = input(f"Please load answers #{tracker}, type 'yes' to begin or type 'quit' to exit")
-        if val == "quit":
-            break;
-        results.append(questions_input())
-    export_tocsv(questions_toframe(results))
-    print("Save Successfully. Check your folder")
-    return
+	results = []
+	tracker = 0
+	while (True):
+	    tracker += 1
+	    val = input(f"Please load answers #{tracker}, type 'yes' to begin or type 'quit' to exit")
+	    if val == "quit":
+	        break;
+	    results.append(questions_input())
+	name = input("Type the name of file you wanna save to")
+	export_tocsv(questions_toframe(results),name)
+	print("Save Successfully. Check your folder")
+	return
 def main():
 	create_answers()
 if __name__ == "__main__":
