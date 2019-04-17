@@ -23,6 +23,10 @@ def questions_toframe(results_list):
     return question_frame
 def export_tocsv(question_frame,name):
 	return question_frame.to_csv("%s.csv"%name,index=False)
+def append_tocsv(question_frame,name):
+	with open("%s.csv"%name,'a') as f:
+		question_frame.to_csv(f,header=False,index=False)
+	return
 def create_answers():
 	results = []
 	tracker = 0
@@ -32,12 +36,17 @@ def create_answers():
 	    if val == "quit":
 	        break;
 	    results.append(questions_input())
-	name = input("Type the name of file you wanna save to")
-	export_tocsv(questions_toframe(results),name)
+	checker = input("ADD TO EXISTING FILE? type yes or no")
+	if checker == "yes":
+		name = input("Type the name of file you wanna append to")
+		append_tocsv(questions_toframe(results),name)
+	else:
+		name = input("Type the name of file you wanna save to")
+		export_tocsv(questions_toframe(results),name)
 	print("Save Successfully. Check your folder")
 	return
 def main():
 	create_answers()
 if __name__ == "__main__":
 	main()
-print("SCRIPT RUN LIKE RIVER!")
+print("SCRIPT RUN LIKE A CHARM!")
